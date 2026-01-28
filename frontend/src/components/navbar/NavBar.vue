@@ -9,21 +9,21 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
 
 <template>
   <div class="drawer lg:drawer-open">
-    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle"/>
     <div class="drawer-content">
       <nav class="navbar w-full bg-base-100 shadow-sm">
         <div class="navbar-start">
           <label for="my-drawer-4" aria-label="open sidebar" class="btn btn-square btn-ghost">
-            <MenuIcon />
+            <MenuIcon/>
           </label>
           <div class="px-2 font-bold text-xl">AIFriends</div>
         </div>
         <!-- 水平居中justify-center，竖直居中，items-center -->
         <div class="navbar-center w-4/5 max-w-180 flex justify-center">
           <div class="join w-4/5 flex justify-center">
-            <input class="input join-item rounded-l-full w-4/5" placeholder="搜索你感兴趣的内容" />
+            <input class="input join-item rounded-l-full w-4/5" placeholder="搜索你感兴趣的内容"/>
             <button class="btn join-item rounded-r-full gap-0">
-              <SearchIcon />
+              <SearchIcon/>
               搜索
             </button>
           </div>
@@ -41,19 +41,19 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
         <ul class="menu w-full grow">
           <li>
             <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="首页">
-              <HomepageIcon />
+              <HomepageIcon/>
               <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">首页</span>
             </button>
           </li>
           <li>
             <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="好友">
-              <FriendIcon />
+              <FriendIcon/>
               <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">好友</span>
             </button>
           </li>
           <li>
             <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="创作">
-              <CreateIcon />
+              <CreateIcon/>
               <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">创作</span>
             </button>
           </li>
