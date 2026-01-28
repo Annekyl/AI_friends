@@ -34,12 +34,12 @@ const router = createRouter({
         {
             path: '/user/account/login/',
             component: LoginIndex,
-            name: 'user-login-index',
+            name: 'user-account-login-index',
         },
         {
             path: '/user/account/register/',
             component: RegisterIndex,
-            name: 'user-register-index',
+            name: 'user-account-register-index',
         },
         {
             path: '/user/space/:user_id/',
