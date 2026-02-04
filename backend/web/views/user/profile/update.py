@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from web.models.user import UserProfile
 from django.contrib.auth.models import User
+from django.utils.timezone import now
 
 from web.views.utils.photo import remove_old_photo
 
@@ -23,8 +24,8 @@ class UpdateProfileView(APIView):
             if not profile:
                 return Response({"result": "简介不能为空"})
             if (
-                    username != user.username
-                    and User.objects.filter(username=username).exists()
+                username != user.username
+                and User.objects.filter(username=username).exists()
             ):
                 return Response({"result": "用户名已存在"})
             if photo:
@@ -44,18 +45,5 @@ class UpdateProfileView(APIView):
                     "photo": user_profile.photo.url,
                 }
             )
-        except:
-            return Response({"result": "系统异常，请稍后重试"})
-
-
-class UpdateProfileView(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def post(self, request):
-        try:
-            user_profile = UserProfile.objects.get(user=request.user)
-            user_profile.profile = request.data.get("profile")
-            user_profile.save()
-            return Response({"result": "success"})
         except:
             return Response({"result": "系统异常，请稍后重试"})
