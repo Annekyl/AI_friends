@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from web.views.index import index
 from web.views.user.account import refresh_token
 from web.views.user.account.get_user_info import GetUserInfo
@@ -15,4 +15,6 @@ urlpatterns = [
     path('api/user/account/get_user_info/', GetUserInfo.as_view()),
 
     path('', index),
+
+    re_path(r'^(?!media/|static/|assets/).*$', index),
 ]
