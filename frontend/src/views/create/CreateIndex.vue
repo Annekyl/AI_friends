@@ -1,11 +1,11 @@
 <script setup>
 
+import CreateCharacter from "@/views/create/CreateCharacter.vue";
+
 </script>
 
 <template>
-创作
+    <CreateCharacter />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
