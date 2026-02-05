@@ -6,7 +6,7 @@ import Profile from "@/views/user/profile/components/Profile.vue";
 import { useUserStore } from "@/stores/user.js";
 import { ref, useTemplateRef } from "vue";
 import api from "@/js/http/api.js";
-import {base64ToFile} from "@/js/utils/base64_to_file.js";
+import { base64ToFile } from "@/js/utils/base64_to_file.js";
 
 const user = useUserStore()
 
@@ -38,7 +38,7 @@ async function handleUpdate() {
             const res = await api.post('/api/user/profile/update/', formData)
             const data = res.data
             // console.log('API response:', data)  // 添加这一行查看返回的数据结构
-            if(data.result === 'success') {
+            if (data.result === 'success') {
                 user.setUserInfo(data)
             } else {
                 errorMessage.value = data.result

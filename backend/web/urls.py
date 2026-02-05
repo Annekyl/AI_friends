@@ -7,6 +7,10 @@ from web.views.user.account.logout import LogoutView
 from web.views.user.account.refresh_token import RefreshTokenView
 from web.views.user.account.register import RegisterView
 from web.views.user.profile.update import UpdateProfileView
+from web.views.create.chacacter.create import CreateCharacterView
+from web.views.create.chacacter.update import UpdateCharacterView
+from web.views.create.chacacter.remove import RemoveCharacterView
+from web.views.create.chacacter.get_single import GetSingleCharacterView
 
 urlpatterns = [
     path('api/user/account/login/', LoginView.as_view()),
@@ -15,6 +19,10 @@ urlpatterns = [
     path('api/user/account/refresh_token/', RefreshTokenView.as_view()),
     path('api/user/account/get_user_info/', GetUserInfo.as_view()),
     path('api/user/profile/update/', UpdateProfileView.as_view()),
+    path('api/create/character/create/', CreateCharacterView.as_view()),
+    path('api/create/character/update/', UpdateCharacterView.as_view()),
+    path('api/create/character/remove/', RemoveCharacterView.as_view()),
+    path('api/create/character/get_single/', GetSingleCharacterView.as_view()),
 
     path('', index),
 
