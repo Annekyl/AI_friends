@@ -15,7 +15,7 @@ class RemoveCharacterView(APIView):
                 pk=character_id, author__user=request.user
             )
             remove_old_photo(character.photo)
-            remove_old_photo(character.background_photo)
+            remove_old_photo(character.background_image)
             character.delete()
             return Response(
                 {

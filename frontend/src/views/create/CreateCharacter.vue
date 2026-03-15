@@ -54,7 +54,7 @@ async function handleCreate() {
                 errorMessage.value = result.result
             }
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     }
 
