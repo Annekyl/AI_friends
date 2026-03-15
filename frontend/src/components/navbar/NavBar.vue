@@ -7,8 +7,28 @@ import CreateIcon from "@/components/navbar/icons/CreateIcon.vue";
 import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
 import { useUserStore } from "@/stores/user.js";
 import UserMenu from "@/components/navbar/UserMenu.vue";
+import { ref, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const user = useUserStore()
+const searchQuery = ref('')
+const router = useRouter()
+const route = useRoute()
+
+watch(() => route.query.q, newQ => {
+    // console.log('watch-1')
+    searchQuery.value = newQ || ''
+})
+
+function handleSearch() {
+    router.push({
+      name: 'homepage-index',
+      query: {
+         q: searchQuery.value.trim()
+        },
+    });
+    searchQuery.value = ''
+}
 </script>
 
 <template>
@@ -26,13 +46,13 @@ const user = useUserStore()
 
         <!-- 水平居中justify-center，竖直居中，items-center -->
         <div class="navbar-center w-4/5 max-w-180 flex justify-center">
-          <div class="join w-4/5 flex justify-center">
-            <input class="input join-item rounded-l-full w-4/5" placeholder="搜索你感兴趣的内容" />
+          <form @submit.prevent="handleSearch" class="join w-4/5 flex justify-center">
+            <input v-model="searchQuery" class="input join-item rounded-l-full w-4/5" placeholder="搜索你感兴趣的内容" />
             <button class="btn join-item rounded-r-full gap-0">
               <SearchIcon />
               搜索
             </button>
-          </div>
+          </form>
         </div>
 
         <div class="navbar-end">
