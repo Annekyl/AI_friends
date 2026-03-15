@@ -1,4 +1,6 @@
 from django.urls import path, re_path
+
+from web.views.create.chacacter.get_list import GetListCharacterView
 from web.views.index import index
 from web.views.user.account import refresh_token
 from web.views.user.account.get_user_info import GetUserInfo
@@ -23,6 +25,7 @@ urlpatterns = [
     path('api/create/character/update/', UpdateCharacterView.as_view()),
     path('api/create/character/remove/', RemoveCharacterView.as_view()),
     path('api/create/character/get_single/', GetSingleCharacterView.as_view()),
+    path('api/create/character/get_list/', GetListCharacterView.as_view()),
 
     path('', index),
 
