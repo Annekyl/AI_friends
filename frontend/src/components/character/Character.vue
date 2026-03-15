@@ -44,8 +44,8 @@ async function handleRemoveCharacter() {
                 </div>
 
                 <div class="absolute left-4 top-54 avater">
-                    <div class="w-16 rounded-full ring-3 ring-white">
-                        <img :src="character.photo" alt="">
+                    <div class="w-16 h-16 rounded-full ring-3 ring-white overflow-hidden">
+                        <img :src="character.photo" class="w-full h-full object-cover" alt="">
                     </div>
                 </div>
 
@@ -60,10 +60,10 @@ async function handleRemoveCharacter() {
             </div>
         </div>
 
-        <RouterLink :to="{name:'user-space-index',params:{user_id:character.author.id}}" class="flex items-center mt-4 gap-2 w-60">
+        <RouterLink :to="{name:'user-space-index',params:{user_id:character.author.user_id}}" class="flex items-center mt-4 gap-2 w-60">
             <div class="avater">
-                <div class="w-7 rounded-full">
-                    <img :src="character.author.photo" alt="">
+                <div class="w-7 h-7 rounded-full overflow-hidden">
+                    <img :src="character.author.photo" class="w-full h-full object-cover" alt="">
                 </div>
             </div>
             <div class="text-sm font-bold line-clamp-1 break-all">
