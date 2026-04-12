@@ -153,6 +153,8 @@ SIMPLE_JWT = {
 # 配置跨域
 CORS_ALLOW_CREDENTIALS = True
 
+# 允许的前端来源（本地开发 + 打包后前端）
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:5173",  # Vite 开发环境
+    "http://localhost:8000",  # 打包后前端运行的地址
 ]
